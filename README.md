@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Harshith R – Portfolio (React + Tailwind + Framer Motion)
 
 A modern, fully responsive portfolio for an AI Engineer with a futuristic dark theme, smooth animations, and clean structure. Built with React (Vite), Tailwind CSS, and Framer Motion.
@@ -46,3 +47,6 @@ Edit files in `src/components/*` and section data arrays inside those components
 
 ## License
 This project is provided as-is for personal portfolio usage. Replace placeholders with your content.
+=======
+# portfolio
+>>>>>>> af1a756be85d17673809b7c858fd3924e38e6aeb
