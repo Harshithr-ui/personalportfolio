@@ -18,7 +18,6 @@ export default function About() {
           <p className="text-gray-200 leading-relaxed">
             I'm an aspiring AI Engineer passionate about building intelligent systems that make a difference. I love working with machine learning, automation, and full-stack web technologies.
           </p>
-          <p className="text-gray-400 text-sm">(ghjk)</p>
         </motion.div>
 
         <motion.div
@@ -32,7 +31,7 @@ export default function About() {
             <img
               src="/pic.png"
               alt="Photo of Harshith R"
-              loading="lazy"
+              loading="eager"
               className="w-56 h-56 md:w-64 md:h-64 object-cover rounded-2xl border-2 border-accent-cyan/30 shadow-glow backdrop-blur-sm"
             />
           </div>
