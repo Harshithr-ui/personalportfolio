@@ -106,7 +106,7 @@ export default function App() {
                 <SectionWrapper id="about" title="About">
                   <About />
                 </SectionWrapper>
-                <SectionWrapper id="education" title="Education / Experience">
+                <SectionWrapper id="education" title="Education / Certifications">
                   <Education />
                 </SectionWrapper>
                 <SectionWrapper id="projects" title="Projects">
