@@ -5,6 +5,7 @@ import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
   const [errors, setErrors] = useState({})
 
   const validate = () => {
@@ -16,11 +17,37 @@ export default function Contact() {
     return Object.keys(e).length === 0
   }
 
-  const onSubmit = (ev) => {
+  const onSubmit = async (ev) => {
     ev.preventDefault()
     if (!validate()) return
-    // Mock submit
-    setTimeout(() => setSent(true), 400)
+    
+    setSending(true)
+    
+    // Using FormSubmit.co - free form backend service
+    const formData = new FormData()
+    formData.append('name', form.name)
+    formData.append('email', form.email)
+    formData.append('message', form.message)
+    formData.append('_subject', `Portfolio Contact: ${form.name}`)
+    formData.append('_captcha', 'false')
+    formData.append('_template', 'table')
+    
+    try {
+      const response = await fetch('https://formsubmit.co/rharshith576@gmail.com', {
+        method: 'POST',
+        body: formData
+      })
+      
+      if (response.ok) {
+        setSent(true)
+        setForm({ name: '', email: '', message: '' })
+        setTimeout(() => setSent(false), 5000)
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -65,9 +92,10 @@ export default function Contact() {
           </div>
           <button
             type="submit"
-            className="px-5 py-2 rounded bg-accent-cyan/20 text-accent-cyan hover:bg-accent-cyan/30 shadow-glow"
+            disabled={sending}
+            className="px-5 py-2 rounded bg-accent-cyan/20 text-accent-cyan hover:bg-accent-cyan/30 shadow-glow disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Send Message
+            {sending ? 'Sending...' : 'Send Message'}
           </button>
 
           <AnimatePresence>
@@ -78,7 +106,7 @@ export default function Contact() {
                 exit={{ opacity: 0, y: 10 }}
                 className="mt-3 text-accent-cyan"
               >
-                Message Sent ✓ (mock)
+                ✓ Message sent successfully! I'll get back to you soon.
               </motion.p>
             )}
           </AnimatePresence>
