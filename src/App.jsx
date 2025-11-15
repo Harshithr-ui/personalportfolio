@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
+import AiTools from './components/AiTools'
 import Projects from './components/Projects'
 import Education from './components/Education'
 import Contact from './components/Contact'
@@ -15,6 +16,7 @@ import { FaArrowUp } from 'react-icons/fa'
 const sections = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
+  { id: 'ai-tools', label: 'AI Tools' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'education', label: 'Education' },
@@ -111,6 +113,9 @@ export default function App() {
                 </SectionWrapper>
                 <SectionWrapper id="projects" title="Projects">
                   <Projects />
+                </SectionWrapper>
+                <SectionWrapper id="ai-tools" title="AI Tools">
+                  <AiTools />
                 </SectionWrapper>
                 <SectionWrapper id="skills" title="Skills">
                   <Skills />
