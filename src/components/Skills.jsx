@@ -3,12 +3,9 @@ import { motion } from 'framer-motion'
 
 const skills = [
   { name: 'Python', level: 90 },
-  { name: 'TensorFlow', level: 75 },
   { name: 'React', level: 85 },
   { name: 'Java', level: 70 },
   { name: 'Node.js', level: 65 },
-  { name: 'Tailwind CSS', level: 80 },
-  { name: 'Machine Learning', level: 78 },
   { name: 'Data Structures', level: 82 }
 ]
 
