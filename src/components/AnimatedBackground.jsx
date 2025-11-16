@@ -64,7 +64,10 @@ export default function AnimatedBackground() {
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            transform: 'translateX(calc(var(--scroll, 0) * 0.3px)) rotateX(calc(var(--my, 0) * 0.5deg)) rotateY(calc(var(--mx, 0) * 0.5deg))'
+            transform: 'translateX(calc(var(--scroll, 0) * 0.3px)) rotateX(calc(var(--my, 0) * 0.5deg)) rotateY(calc(var(--mx, 0) * 0.5deg))',
+            // debug tint to verify rendering
+            backgroundColor: 'rgba(255,0,255,0.06)',
+            backgroundBlendMode: 'overlay'
           }}
         />
       </div>
