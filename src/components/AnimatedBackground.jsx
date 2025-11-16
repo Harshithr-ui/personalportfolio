@@ -33,28 +33,37 @@ export default function AnimatedBackground() {
   }, [])
 
   return (
-    <div ref={containerRef} className="fixed inset-0 z-0 pointer-events-none">
-      <div className="absolute inset-0 will-change-transform">
+    <div ref={containerRef} className="animated-bg fixed inset-0 z-0 pointer-events-none">
+      <div className="animated-bg__inner absolute inset-0 will-change-transform">
         <div
-          className="absolute inset-0 bg-cover bg-center transform transition-transform duration-500"
+          className="animated-bg__layer absolute inset-0 transform transition-transform duration-500"
           style={{
             backgroundImage: "url('/pexels-dreamypixel-547115.jpg')",
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             transform: 'translateX(calc(var(--scroll, 0) * 1px))'
           }}
         />
 
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-80 transform scale-105 transition-transform duration-700"
+          className="animated-bg__layer absolute inset-0 opacity-80 transform scale-105 transition-transform duration-700"
           style={{
             backgroundImage: "url('/pexels-philippedonn-1169754.jpg')",
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             transform: 'translateX(calc(var(--scroll, 0) * 0.6px)) rotateX(calc(var(--my, 0) * 1deg)) rotateY(calc(var(--mx, 0) * 1deg))'
           }}
         />
 
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-60 transform scale-110 transition-transform duration-900"
+          className="animated-bg__layer absolute inset-0 opacity-60 transform scale-110 transition-transform duration-900"
           style={{
             backgroundImage: "url('/pexels-felix-mittermeier-956981.jpg')",
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             transform: 'translateX(calc(var(--scroll, 0) * 0.3px)) rotateX(calc(var(--my, 0) * 0.5deg)) rotateY(calc(var(--mx, 0) * 0.5deg))'
           }}
         />

@@ -42,4 +42,18 @@ section {
   .section-title.animate-underline::after {
     transform: scaleX(1);
   }
+
+  /* Animated background scoping to avoid leaking into other components */
+  .animated-bg {
+    inset: 0;
+  }
+  .animated-bg, .animated-bg__inner {
+    pointer-events: none;
+  }
+  .animated-bg__layer {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    will-change: transform !important;
+  }
 }
