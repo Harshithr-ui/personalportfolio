@@ -84,7 +84,9 @@ export default function App() {
       <Preloader onFinish={() => setLoading(false)} />
       <AnimatePresence mode="wait">
         {!loading && (
-          <motion.div
+          <>
+            <AnimatedBackground />
+            <motion.div
             key="app"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -92,7 +94,7 @@ export default function App() {
             transition={{ duration: 0.4 }}
             className="relative min-h-screen bg-navy bg-gradient-futuristic/40"
           >
-            <AnimatedBackground />
+            
             <div className="relative z-[100]">
               <Navbar
                 sections={sections}
@@ -145,7 +147,8 @@ export default function App() {
                 </motion.button>
               )}
             </AnimatePresence>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
